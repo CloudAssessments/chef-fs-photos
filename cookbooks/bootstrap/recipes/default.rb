@@ -46,6 +46,10 @@ execute 'install photo-filter' do
   command 'touch /home/cloud_user/fs-photos/system-secrets'
 end
 
+file '/home/cloud_user/fs-photos/Dockerfile'
+  :delete
+end
+
 service 'sshd' do
   action :start
 end
