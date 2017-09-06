@@ -46,7 +46,7 @@ execute 'install photo-filter' do
   command 'touch /home/cloud_user/fs-photos/system-secrets'
 end
 
-file '/home/cloud_user/fs-photos/Dockerfile'
+file '/home/cloud_user/fs-photos/Dockerfile' do
   :delete
 end
 
