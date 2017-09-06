@@ -50,6 +50,10 @@ file '/home/cloud_user/fs-photos/Dockerfile' do
   action :delete
 end
 
+file '/home/cloud_user/fs-photos/docker-compose.yml' do
+  action :delete
+end
+
 service 'sshd' do
   action :start
 end
