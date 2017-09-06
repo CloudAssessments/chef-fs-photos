@@ -1,0 +1,239 @@
+I, [2017-08-07T17:04:07.529641 #1681]  INFO -- default-ubuntu-1604: -----> Cleaning up any prior instances of <default-ubuntu-1604>
+I, [2017-08-07T17:04:07.530853 #1681]  INFO -- default-ubuntu-1604: -----> Destroying <default-ubuntu-1604>...
+I, [2017-08-07T17:04:07.986492 #1681]  INFO -- default-ubuntu-1604: Error response from daemon: Container 6bd5d296315c2d4f95e0499c2a338a37c85c53048dd22c30952559670241116f is not running
+I, [2017-08-07T17:04:08.023995 #1681]  INFO -- default-ubuntu-1604: Finished destroying <default-ubuntu-1604> (0m0.49s).
+I, [2017-08-07T17:04:08.024817 #1681]  INFO -- default-ubuntu-1604: -----> Testing <default-ubuntu-1604>
+I, [2017-08-07T17:04:08.024905 #1681]  INFO -- default-ubuntu-1604: -----> Creating <default-ubuntu-1604>...
+I, [2017-08-07T17:04:08.720055 #1681]  INFO -- default-ubuntu-1604: Sending build context to Docker daemon 83.46 kB
+I, [2017-08-07T17:04:08.959570 #1681]  INFO -- default-ubuntu-1604: Step 1 : FROM ubuntu:16.04
+I, [2017-08-07T17:04:08.959655 #1681]  INFO -- default-ubuntu-1604:  ---> 14f60031763d
+I, [2017-08-07T17:04:08.959676 #1681]  INFO -- default-ubuntu-1604: Step 2 : RUN dpkg-divert --local --rename --add /sbin/initctl
+I, [2017-08-07T17:04:08.959697 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.959714 #1681]  INFO -- default-ubuntu-1604:  ---> 3ab50750bd78
+I, [2017-08-07T17:04:08.959732 #1681]  INFO -- default-ubuntu-1604: Step 3 : RUN ln -sf /bin/true /sbin/initctl
+I, [2017-08-07T17:04:08.959750 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.959765 #1681]  INFO -- default-ubuntu-1604:  ---> 9412d6704bc9
+I, [2017-08-07T17:04:08.959782 #1681]  INFO -- default-ubuntu-1604: Step 4 : ENV DEBIAN_FRONTEND noninteractive
+I, [2017-08-07T17:04:08.959796 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.959814 #1681]  INFO -- default-ubuntu-1604:  ---> e96f211c80fb
+I, [2017-08-07T17:04:08.959829 #1681]  INFO -- default-ubuntu-1604: Step 5 : ENV container docker
+I, [2017-08-07T17:04:08.959845 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.959859 #1681]  INFO -- default-ubuntu-1604:  ---> 0ae3badc52d1
+I, [2017-08-07T17:04:08.959945 #1681]  INFO -- default-ubuntu-1604: Step 6 : RUN apt-get update
+I, [2017-08-07T17:04:08.959975 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960001 #1681]  INFO -- default-ubuntu-1604:  ---> 15f702bf57ca
+I, [2017-08-07T17:04:08.960016 #1681]  INFO -- default-ubuntu-1604: Step 7 : RUN apt-get install -y sudo openssh-server curl lsb-release
+I, [2017-08-07T17:04:08.960030 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960050 #1681]  INFO -- default-ubuntu-1604:  ---> acc5d262c089
+I, [2017-08-07T17:04:08.960067 #1681]  INFO -- default-ubuntu-1604: Step 8 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
+I, [2017-08-07T17:04:08.960086 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960099 #1681]  INFO -- default-ubuntu-1604:  ---> a01fcdf28cf4
+I, [2017-08-07T17:04:08.960115 #1681]  INFO -- default-ubuntu-1604: Step 9 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+I, [2017-08-07T17:04:08.960129 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960142 #1681]  INFO -- default-ubuntu-1604:  ---> 8bbf1b828026
+I, [2017-08-07T17:04:08.960158 #1681]  INFO -- default-ubuntu-1604: Step 10 : RUN echo "Defaults !requiretty" >> /etc/sudoers
+I, [2017-08-07T17:04:08.960172 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960187 #1681]  INFO -- default-ubuntu-1604:  ---> bfb8db7c9786
+I, [2017-08-07T17:04:08.960201 #1681]  INFO -- default-ubuntu-1604: Step 11 : RUN mkdir -p /home/kitchen/.ssh
+I, [2017-08-07T17:04:08.960214 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960229 #1681]  INFO -- default-ubuntu-1604:  ---> 699dd4a2b150
+I, [2017-08-07T17:04:08.960253 #1681]  INFO -- default-ubuntu-1604: Step 12 : RUN chown -R kitchen /home/kitchen/.ssh
+I, [2017-08-07T17:04:08.960276 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960295 #1681]  INFO -- default-ubuntu-1604:  ---> d936f1ecf870
+I, [2017-08-07T17:04:08.960309 #1681]  INFO -- default-ubuntu-1604: Step 13 : RUN chmod 0700 /home/kitchen/.ssh
+I, [2017-08-07T17:04:08.960373 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960392 #1681]  INFO -- default-ubuntu-1604:  ---> c142bdf0df57
+I, [2017-08-07T17:04:08.960415 #1681]  INFO -- default-ubuntu-1604: Step 14 : RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2017-08-07T17:04:08.960430 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960442 #1681]  INFO -- default-ubuntu-1604:  ---> 6d639c038560
+I, [2017-08-07T17:04:08.960458 #1681]  INFO -- default-ubuntu-1604: Step 15 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2017-08-07T17:04:08.960471 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960483 #1681]  INFO -- default-ubuntu-1604:  ---> 9f45e5fa7317
+I, [2017-08-07T17:04:08.960496 #1681]  INFO -- default-ubuntu-1604: Step 16 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2017-08-07T17:04:08.960513 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960526 #1681]  INFO -- default-ubuntu-1604:  ---> 5ed6959930fb
+I, [2017-08-07T17:04:08.960539 #1681]  INFO -- default-ubuntu-1604: Step 17 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQDHA13ZpjMuR8aYLf1oq0umisF10KmQCyFDORfJ2ftKPp/uX6pondQiKs7yChxXyjQu4hKbYgFNMMeJAxPXPIWsSRak7tpBCuY6t9MQHDaszfKOUD/m6y9Rj8xj8wnVxS7aznhu4WktuQOKfSWqJfKyAJ2crOxOOSIng5DUbX9o/RXXMbfwxPODNGQG90DWzb9OV7pUenM4NPJvuntKKABzj29ib6pFkpuV/jT9PFI0d9fdW9DoDGTJ6sJ8LaKrsFeqhdQM1eiZshbiJB2Is7zxN3RMY1/eNdKL3tAWl0cmZG5LQ4v1Zoi8VhuyYVbSf751/QNkG4gAnwh7iNKTrejl\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2017-08-07T17:04:08.960556 #1681]  INFO -- default-ubuntu-1604:  ---> Using cache
+I, [2017-08-07T17:04:08.960568 #1681]  INFO -- default-ubuntu-1604:  ---> 0dc71b392d88
+I, [2017-08-07T17:04:08.960580 #1681]  INFO -- default-ubuntu-1604: Successfully built 0dc71b392d88
+I, [2017-08-07T17:04:10.487722 #1681]  INFO -- default-ubuntu-1604: 046a1334c65a834a96d46af2799149627003301da0b284246912ec8eec5e084d
+I, [2017-08-07T17:04:14.171445 #1681]  INFO -- default-ubuntu-1604: 0.0.0.0:32768
+I, [2017-08-07T17:04:14.240607 #1681]  INFO -- default-ubuntu-1604: Waiting for SSH service on localhost:32768, retrying in 3 seconds
+I, [2017-08-07T17:04:17.681039 #1681]  INFO -- default-ubuntu-1604: [SSH] Established
+I, [2017-08-07T17:04:17.682243 #1681]  INFO -- default-ubuntu-1604: Finished creating <default-ubuntu-1604> (0m9.66s).
+I, [2017-08-07T17:04:17.682331 #1681]  INFO -- default-ubuntu-1604: -----> Converging <default-ubuntu-1604>...
+I, [2017-08-07T17:04:17.683807 #1681]  INFO -- default-ubuntu-1604: Preparing files for transfer
+I, [2017-08-07T17:04:17.683909 #1681]  INFO -- default-ubuntu-1604: Preparing dna.json
+I, [2017-08-07T17:04:17.721436 #1681]  INFO -- default-ubuntu-1604: Resolving cookbook dependencies with Berkshelf 6.2.0...
+I, [2017-08-07T17:04:31.898847 #1681]  INFO -- default-ubuntu-1604: Removing non-cookbook files before transfer
+I, [2017-08-07T17:04:31.937434 #1681]  INFO -- default-ubuntu-1604: Preparing validation.pem
+I, [2017-08-07T17:04:31.939413 #1681]  INFO -- default-ubuntu-1604: Preparing client.rb
+I, [2017-08-07T17:04:32.183029 #1681]  INFO -- default-ubuntu-1604: -----> Installing Chef Omnibus (install only if missing)
+I, [2017-08-07T17:04:32.183635 #1681]  INFO -- default-ubuntu-1604: Downloading https://omnitruck.chef.io/install.sh to file /tmp/install.sh
+I, [2017-08-07T17:04:32.183972 #1681]  INFO -- default-ubuntu-1604: Trying wget...
+I, [2017-08-07T17:04:32.453465 #1681]  INFO -- default-ubuntu-1604: Download complete.
+I, [2017-08-07T17:04:32.622560 #1681]  INFO -- default-ubuntu-1604: ubuntu 16.04 x86_64
+I, [2017-08-07T17:04:32.622643 #1681]  INFO -- default-ubuntu-1604: Getting information for chef stable  for ubuntu...
+I, [2017-08-07T17:04:32.622677 #1681]  INFO -- default-ubuntu-1604: downloading https://omnitruck.chef.io/stable/chef/metadata?v=&p=ubuntu&pv=16.04&m=x86_64
+I, [2017-08-07T17:04:32.622698 #1681]  INFO -- default-ubuntu-1604:   to file /tmp/install.sh.14/metadata.txt
+I, [2017-08-07T17:04:32.622714 #1681]  INFO -- default-ubuntu-1604: trying wget...
+I, [2017-08-07T17:04:33.048175 #1681]  INFO -- default-ubuntu-1604: sha1	2952362ec5d44ec776ace492c29a36c423437f39
+I, [2017-08-07T17:04:33.048275 #1681]  INFO -- default-ubuntu-1604: sha256	88cd274a694bfe23d255937794744d50af972097958fa681a544479e2bfb7f6b
+I, [2017-08-07T17:04:33.048301 #1681]  INFO -- default-ubuntu-1604: url	https://packages.chef.io/files/stable/chef/13.2.20/ubuntu/16.04/chef_13.2.20-1_amd64.deb
+I, [2017-08-07T17:04:33.048320 #1681]  INFO -- default-ubuntu-1604: version	13.2.20
+I, [2017-08-07T17:04:33.048600 #1681]  INFO -- default-ubuntu-1604: downloaded metadata file looks valid...
+I, [2017-08-07T17:04:33.171767 #1681]  INFO -- default-ubuntu-1604: downloading https://packages.chef.io/files/stable/chef/13.2.20/ubuntu/16.04/chef_13.2.20-1_amd64.deb
+I, [2017-08-07T17:04:33.171841 #1681]  INFO -- default-ubuntu-1604:   to file /tmp/install.sh.14/chef_13.2.20-1_amd64.deb
+I, [2017-08-07T17:04:33.171863 #1681]  INFO -- default-ubuntu-1604: trying wget...
+I, [2017-08-07T17:04:37.453255 #1681]  INFO -- default-ubuntu-1604: Comparing checksum with sha256sum...
+I, [2017-08-07T17:04:39.620846 #1681]  INFO -- default-ubuntu-1604: 
+I, [2017-08-07T17:04:39.662626 #1681]  INFO -- default-ubuntu-1604: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2017-08-07T17:04:39.662665 #1681]  INFO -- default-ubuntu-1604: 
+I, [2017-08-07T17:04:39.662685 #1681]  INFO -- default-ubuntu-1604: You are installing an omnibus package without a version pin.  If you are installing
+I, [2017-08-07T17:04:39.662702 #1681]  INFO -- default-ubuntu-1604: on production servers via an automated process this is DANGEROUS and you will
+I, [2017-08-07T17:04:39.662718 #1681]  INFO -- default-ubuntu-1604: be upgraded without warning on new releases, even to new major releases.
+I, [2017-08-07T17:04:39.662733 #1681]  INFO -- default-ubuntu-1604: Letting the version float is only appropriate in desktop, test, development or
+I, [2017-08-07T17:04:39.662747 #1681]  INFO -- default-ubuntu-1604: CI/CD environments.
+I, [2017-08-07T17:04:39.662761 #1681]  INFO -- default-ubuntu-1604: 
+I, [2017-08-07T17:04:39.662775 #1681]  INFO -- default-ubuntu-1604: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2017-08-07T17:04:39.662789 #1681]  INFO -- default-ubuntu-1604: 
+I, [2017-08-07T17:04:39.662802 #1681]  INFO -- default-ubuntu-1604: Installing chef 
+I, [2017-08-07T17:04:39.662816 #1681]  INFO -- default-ubuntu-1604: installing with dpkg...
+I, [2017-08-07T17:04:39.993721 #1681]  INFO -- default-ubuntu-1604: Selecting previously unselected package chef.
+I, [2017-08-07T17:04:40.267371 #1681]  INFO -- default-ubuntu-1604: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9668 files and directories currently installed.)
+I, [2017-08-07T17:04:40.267491 #1681]  INFO -- default-ubuntu-1604: Preparing to unpack .../chef_13.2.20-1_amd64.deb ...
+I, [2017-08-07T17:04:40.304000 #1681]  INFO -- default-ubuntu-1604: Unpacking chef (13.2.20-1) ...
+I, [2017-08-07T17:05:35.676332 #1681]  INFO -- default-ubuntu-1604: Setting up chef (13.2.20-1) ...
+I, [2017-08-07T17:05:36.763712 #1681]  INFO -- default-ubuntu-1604: Thank you for installing Chef!
+I, [2017-08-07T17:05:37.238141 #1681]  INFO -- default-ubuntu-1604: Transferring files to <default-ubuntu-1604>
+I, [2017-08-07T17:05:52.096708 #1681]  INFO -- default-ubuntu-1604: Starting Chef Client, version 13.2.20
+I, [2017-08-07T17:05:54.873168 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:05:54+00:00] WARN: Plugin Network: unable to detect ipaddress
+I, [2017-08-07T17:05:54.873253 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:05:54+00:00] WARN: Plugin Network: unable to detect ipaddress
+I, [2017-08-07T17:05:57.229652 #1681]  INFO -- default-ubuntu-1604: Creating a new client identity for default-ubuntu-1604 using the validator key.
+I, [2017-08-07T17:06:00.114419 #1681]  INFO -- default-ubuntu-1604: resolving cookbooks for run list: ["test::default"]
+I, [2017-08-07T17:06:00.315297 #1681]  INFO -- default-ubuntu-1604: Synchronizing Cookbooks:
+I, [2017-08-07T17:06:00.401232 #1681]  INFO -- default-ubuntu-1604:   - test (0.1.0)
+I, [2017-08-07T17:06:00.401304 #1681]  INFO -- default-ubuntu-1604: Installing Cookbook Gems:
+I, [2017-08-07T17:06:00.401325 #1681]  INFO -- default-ubuntu-1604: Compiling Cookbooks...
+I, [2017-08-07T17:06:00.479448 #1681]  INFO -- default-ubuntu-1604: Converging 4 resources
+I, [2017-08-07T17:06:00.480350 #1681]  INFO -- default-ubuntu-1604: Recipe: test::default
+I, [2017-08-07T17:07:11.526164 #1681]  INFO -- default-ubuntu-1604:   * apt_package[git] action install
+I, [2017-08-07T17:07:11.542196 #1681]  INFO -- default-ubuntu-1604:     - install version 1:2.7.4-0ubuntu1.1 of package git
+I, [2017-08-07T17:08:05.901555 #1681]  INFO -- default-ubuntu-1604:   * apt_package[docker] action install
+I, [2017-08-07T17:08:05.901654 #1681]  INFO -- default-ubuntu-1604:     - install version 1.5-1 of package docker
+I, [2017-08-07T17:08:06.038565 #1681]  INFO -- default-ubuntu-1604:   * service[docker] action start
+I, [2017-08-07T17:08:06.039897 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.039932 #1681]  INFO -- default-ubuntu-1604:     ================================================================================
+I, [2017-08-07T17:08:06.039957 #1681]  INFO -- default-ubuntu-1604:     Error executing action `start` on resource 'service[docker]'
+I, [2017-08-07T17:08:06.039975 #1681]  INFO -- default-ubuntu-1604:     ================================================================================
+I, [2017-08-07T17:08:06.039990 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.040004 #1681]  INFO -- default-ubuntu-1604:     Errno::ENOENT
+I, [2017-08-07T17:08:06.160166 #1681]  INFO -- default-ubuntu-1604:     -------------
+I, [2017-08-07T17:08:06.160252 #1681]  INFO -- default-ubuntu-1604:     No such file or directory - /sbin/status
+I, [2017-08-07T17:08:06.160279 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.160297 #1681]  INFO -- default-ubuntu-1604:     Resource Declaration:
+I, [2017-08-07T17:08:06.161104 #1681]  INFO -- default-ubuntu-1604:     ---------------------
+I, [2017-08-07T17:08:06.161125 #1681]  INFO -- default-ubuntu-1604:     # In /tmp/kitchen/cache/cookbooks/test/recipes/default.rb
+I, [2017-08-07T17:08:06.161159 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.161176 #1681]  INFO -- default-ubuntu-1604:       9: service 'docker' do
+I, [2017-08-07T17:08:06.161191 #1681]  INFO -- default-ubuntu-1604:      10: 	action :start
+I, [2017-08-07T17:08:06.161205 #1681]  INFO -- default-ubuntu-1604:      11: end
+I, [2017-08-07T17:08:06.161220 #1681]  INFO -- default-ubuntu-1604:      12: if node['platform_family'] == "debian" 
+I, [2017-08-07T17:08:06.161239 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.161254 #1681]  INFO -- default-ubuntu-1604:     Compiled Resource:
+I, [2017-08-07T17:08:06.161269 #1681]  INFO -- default-ubuntu-1604:     ------------------
+I, [2017-08-07T17:08:06.161284 #1681]  INFO -- default-ubuntu-1604:     # Declared in /tmp/kitchen/cache/cookbooks/test/recipes/default.rb:9:in `from_file'
+I, [2017-08-07T17:08:06.161298 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.161313 #1681]  INFO -- default-ubuntu-1604:     service("docker") do
+I, [2017-08-07T17:08:06.161343 #1681]  INFO -- default-ubuntu-1604:       action [:start]
+I, [2017-08-07T17:08:06.161360 #1681]  INFO -- default-ubuntu-1604:       default_guard_interpreter :default
+I, [2017-08-07T17:08:06.161374 #1681]  INFO -- default-ubuntu-1604:       service_name "docker"
+I, [2017-08-07T17:08:06.161387 #1681]  INFO -- default-ubuntu-1604:       enabled nil
+I, [2017-08-07T17:08:06.161401 #1681]  INFO -- default-ubuntu-1604:       running nil
+I, [2017-08-07T17:08:06.161414 #1681]  INFO -- default-ubuntu-1604:       masked nil
+I, [2017-08-07T17:08:06.161428 #1681]  INFO -- default-ubuntu-1604:       pattern "docker"
+I, [2017-08-07T17:08:06.161441 #1681]  INFO -- default-ubuntu-1604:       declared_type :service
+I, [2017-08-07T17:08:06.161456 #1681]  INFO -- default-ubuntu-1604:       cookbook_name "test"
+I, [2017-08-07T17:08:06.161469 #1681]  INFO -- default-ubuntu-1604:       recipe_name "default"
+I, [2017-08-07T17:08:06.161495 #1681]  INFO -- default-ubuntu-1604:     end
+I, [2017-08-07T17:08:06.161510 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.161523 #1681]  INFO -- default-ubuntu-1604:     System Info:
+I, [2017-08-07T17:08:06.161536 #1681]  INFO -- default-ubuntu-1604:     ------------
+I, [2017-08-07T17:08:06.161550 #1681]  INFO -- default-ubuntu-1604:     chef_version=13.2.20
+I, [2017-08-07T17:08:06.161563 #1681]  INFO -- default-ubuntu-1604:     platform=ubuntu
+I, [2017-08-07T17:08:06.161577 #1681]  INFO -- default-ubuntu-1604:     platform_version=16.04
+I, [2017-08-07T17:08:06.161591 #1681]  INFO -- default-ubuntu-1604:     ruby=ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
+I, [2017-08-07T17:08:06.161607 #1681]  INFO -- default-ubuntu-1604:     program_name=chef-client worker: ppid=96;start=17:05:51;
+I, [2017-08-07T17:08:06.161621 #1681]  INFO -- default-ubuntu-1604:     executable=/opt/chef/bin/chef-client
+I, [2017-08-07T17:08:06.161637 #1681]  INFO -- default-ubuntu-1604:     
+I, [2017-08-07T17:08:06.200624 #1681]  INFO -- default-ubuntu-1604: 
+I, [2017-08-07T17:08:06.200690 #1681]  INFO -- default-ubuntu-1604: Running handlers:
+I, [2017-08-07T17:08:06.201614 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] ERROR: Running exception handlers
+I, [2017-08-07T17:08:06.201651 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] ERROR: Running exception handlers
+I, [2017-08-07T17:08:06.201671 #1681]  INFO -- default-ubuntu-1604: Running handlers complete
+I, [2017-08-07T17:08:06.201686 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] ERROR: Exception handlers complete
+I, [2017-08-07T17:08:06.201702 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] ERROR: Exception handlers complete
+I, [2017-08-07T17:08:06.201859 #1681]  INFO -- default-ubuntu-1604: Chef Client failed. 2 resources updated in 02 minutes 14 seconds
+I, [2017-08-07T17:08:06.283323 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.out
+I, [2017-08-07T17:08:06.283406 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.out
+I, [2017-08-07T17:08:06.283434 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] FATAL: Please provide the contents of the stacktrace.out file if you file a bug report
+I, [2017-08-07T17:08:06.283454 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] FATAL: Please provide the contents of the stacktrace.out file if you file a bug report
+I, [2017-08-07T17:08:06.283471 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] ERROR: service[docker] (test::default line 9) had an error: Errno::ENOENT: No such file or directory - /sbin/status
+I, [2017-08-07T17:08:06.283487 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] ERROR: service[docker] (test::default line 9) had an error: Errno::ENOENT: No such file or directory - /sbin/status
+I, [2017-08-07T17:08:06.597309 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)
+I, [2017-08-07T17:08:06.597409 #1681]  INFO -- default-ubuntu-1604: [2017-08-07T17:08:06+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)
+E, [2017-08-07T17:08:06.788841 #1681] ERROR -- default-ubuntu-1604: Converge failed on instance <default-ubuntu-1604>.
+E, [2017-08-07T17:08:06.789008 #1681] ERROR -- default-ubuntu-1604: ------Exception-------
+E, [2017-08-07T17:08:06.789036 #1681] ERROR -- default-ubuntu-1604: Class: Kitchen::ActionFailed
+E, [2017-08-07T17:08:06.789051 #1681] ERROR -- default-ubuntu-1604: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2017-08-07T17:08:06.789069 #1681] ERROR -- default-ubuntu-1604: ----------------------
+E, [2017-08-07T17:08:06.789082 #1681] ERROR -- default-ubuntu-1604: ------Backtrace-------
+E, [2017-08-07T17:08:06.789092 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/provisioner/base.rb:83:in `rescue in call'
+E, [2017-08-07T17:08:06.789103 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/provisioner/base.rb:86:in `call'
+E, [2017-08-07T17:08:06.789114 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:384:in `block in converge_action'
+E, [2017-08-07T17:08:06.789124 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2017-08-07T17:08:06.789135 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-08-07T17:08:06.789145 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2017-08-07T17:08:06.789156 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-08-07T17:08:06.789166 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:380:in `converge_action'
+E, [2017-08-07T17:08:06.789637 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-08-07T17:08:06.789653 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-08-07T17:08:06.789665 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-08-07T17:08:06.789676 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:157:in `verify'
+E, [2017-08-07T17:08:06.789686 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:186:in `block in test'
+E, [2017-08-07T17:08:06.789696 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2017-08-07T17:08:06.789707 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:182:in `test'
+E, [2017-08-07T17:08:06.789717 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-08-07T17:08:06.789728 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-08-07T17:08:06.789748 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-08-07T17:08:06.789760 #1681] ERROR -- default-ubuntu-1604: ----End Backtrace-----
+E, [2017-08-07T17:08:06.789770 #1681] ERROR -- default-ubuntu-1604: ---Nested Exception---
+E, [2017-08-07T17:08:06.789780 #1681] ERROR -- default-ubuntu-1604: Class: Kitchen::Transport::SshFailed
+E, [2017-08-07T17:08:06.789791 #1681] ERROR -- default-ubuntu-1604: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2017-08-07T17:08:06.789801 #1681] ERROR -- default-ubuntu-1604: ----------------------
+E, [2017-08-07T17:08:06.789811 #1681] ERROR -- default-ubuntu-1604: ------Backtrace-------
+E, [2017-08-07T17:08:06.789821 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/provisioner/base.rb:83:in `rescue in call'
+E, [2017-08-07T17:08:06.789832 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/provisioner/base.rb:86:in `call'
+E, [2017-08-07T17:08:06.789842 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:384:in `block in converge_action'
+E, [2017-08-07T17:08:06.789852 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2017-08-07T17:08:06.789863 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-08-07T17:08:06.789873 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2017-08-07T17:08:06.789884 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-08-07T17:08:06.789894 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:380:in `converge_action'
+E, [2017-08-07T17:08:06.789905 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-08-07T17:08:06.789928 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-08-07T17:08:06.789947 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-08-07T17:08:06.789959 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:157:in `verify'
+E, [2017-08-07T17:08:06.789970 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:186:in `block in test'
+E, [2017-08-07T17:08:06.789980 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2017-08-07T17:08:06.789990 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:182:in `test'
+E, [2017-08-07T17:08:06.790001 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-08-07T17:08:06.790011 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-08-07T17:08:06.790021 #1681] ERROR -- default-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-08-07T17:08:06.790037 #1681] ERROR -- default-ubuntu-1604: ----End Backtrace-----
