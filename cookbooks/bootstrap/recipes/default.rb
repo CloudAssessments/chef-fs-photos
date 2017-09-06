@@ -47,7 +47,7 @@ execute 'install photo-filter' do
 end
 
 file '/home/cloud_user/fs-photos/Dockerfile' do
-  :delete
+  action :delete
 end
 
 service 'sshd' do
