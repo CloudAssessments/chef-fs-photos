@@ -55,6 +55,7 @@ file '/home/cloud_user/fs-photos/docker-compose.yml' do
 end
 
 directory '/home/cloud_user/fs-photos/.git' do
+  recursive: true
   action :delete
 end
 
