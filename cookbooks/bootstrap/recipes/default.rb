@@ -54,7 +54,7 @@ file '/home/cloud_user/fs-photos/docker-compose.yml' do
   action :delete
 end
 
-file '/home/cloud_user/fs-photos/.git' do
+directory '/home/cloud_user/fs-photos/.git' do
   action :delete
 end
 
