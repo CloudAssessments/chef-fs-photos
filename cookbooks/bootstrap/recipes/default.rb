@@ -54,6 +54,14 @@ file '/home/cloud_user/fs-photos/docker-compose.yml' do
   action :delete
 end
 
+file '/home/cloud_user/fs-photos/.git' do
+  action :delete
+end
+
+file '/home/cloud_user/fs-photos/.gitignore' do
+  action :delete
+end
+
 service 'sshd' do
   action :start
 end
